@@ -17,7 +17,7 @@ jobs:
         with:
           host: ${{ vars.SERVER_HOST }}
           username: root
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          key: ${{ secrets.PERSONAL_SERVER_SSH_KEY }}
           port: ${{ vars.SSH_PORT || 22 }}
           script: |
             cd /var/www/production/BriefChat/server
