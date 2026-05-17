@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BriefChat</title>
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header-title">
+                <img src="icons/icon128.png" class="header-logo" alt="BriefChat">
+                <span>BriefChat</span>
+            </div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">⚙️</button>
+        </header>
+
+        <div class="page-info">
+            <span class="page-title" id="pageTitle">Loading...</span>
+        </div>
+
+        <div class="messages" id="messages"></div>
+
+        <div class="chips-container" id="chipsContainer"></div>
+
+        <div class="new-page-banner" id="newPageBanner" hidden>
+            <div class="new-page-info">
+                <span class="new-page-icon">📄</span>
+                <span class="new-page-label" id="newPageLabel">New page detected</span>
+            </div>
+            <div class="new-page-actions">
+                <button class="start-new-btn" id="startNewBtn">Start new chat here</button>
+                <button class="dismiss-banner-btn" id="dismissBannerBtn" title="Dismiss">✕</button>
+            </div>
+        </div>
+
+        <p id="freeQuestionsHint" class="free-questions-hint" hidden></p>
+
+        <div class="input-area">
+            <textarea
+                id="userInput"
+                class="user-input"
+                placeholder="Ask anything about this page..."
+                rows="1"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" title="Send">➤</button>
+        </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+
+</html>
