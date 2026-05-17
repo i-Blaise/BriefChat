@@ -18,7 +18,6 @@ jobs:
           host: ${{ vars.SERVER_HOST }}
           username: root
           key: ${{ secrets.PERSONAL_SERVER_SSH_KEY }}
-          port: ${{ vars.SSH_PORT || 22 }}
           script: |
             cd /var/www/production/BriefChat/server
             git pull origin main
