@@ -48,7 +48,9 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .hint code { background: #374151; }
+            .hint code {
+                background: #374151;
+            }
         }
 
         input[type="password"] {
@@ -97,8 +99,13 @@
             min-height: 20px;
         }
 
-        #status.success { color: #16a34a; }
-        #status.error { color: #dc2626; }
+        #status.success {
+            color: #16a34a;
+        }
+
+        #status.error {
+            color: #dc2626;
+        }
     </style>
 </head>
 
@@ -108,14 +115,15 @@
 
     <label for="apiKeyInput">Your API Key <span style="font-weight:400;color:#888">(optional)</span></label>
     <p class="hint">
-        Add your own key for unlimited chat. Accepted formats:<br>
+        Add your own key for unlimited chats. Accepted formats:<br>
         OpenAI: <code>sk-...</code> or <code>sk-proj-...</code><br>
         Anthropic Claude: <code>sk-ant-...</code><br>
         Google Gemini: <code>AIza...</code><br>
         xAI Grok: <code>xai-...</code><br><br>
         Your key is stored only on your device and sent directly to the provider — never through our servers.
     </p>
-    <input type="password" id="apiKeyInput" placeholder="sk-... or sk-ant-... or AIza... or xai-..." autocomplete="off" spellcheck="false">
+    <input type="password" id="apiKeyInput" placeholder="sk-... or sk-ant-... or AIza... or xai-..." autocomplete="off"
+        spellcheck="false">
     <p class="provider-detected" id="providerDetected"></p>
 
     <button id="saveBtn">Save</button>
