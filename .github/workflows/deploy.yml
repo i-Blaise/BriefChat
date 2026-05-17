@@ -1,4 +1,4 @@
-name: Deploy Server
+name: Deploy BriefChat Server
 
 on:
   push:
@@ -15,12 +15,12 @@ jobs:
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ vars.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
-            cd ~/briefchat/server
+            cd ~/BriefChat/server
             git pull origin main
             npm install --production
             pm2 restart briefchat-proxy || pm2 start index.js --name briefchat-proxy
