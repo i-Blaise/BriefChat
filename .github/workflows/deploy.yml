@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ vars.SSH_PORT || 22 }}
           script: |
-            cd ~/BriefChat/server
+            cd /var/www/production/BriefChat/server
             git pull origin main
             npm install --production
             pm2 restart briefchat-proxy || pm2 start index.js --name briefchat-proxy
