@@ -26,7 +26,7 @@ jobs:
 
             nvm use 22
 
-            cd /var/www/production/BriefChat
+            cd /var/www/production/BriefChat/server
 
             git fetch origin
             git reset --hard origin/main
