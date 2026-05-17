@@ -18,9 +18,26 @@ jobs:
           host: ${{ vars.SERVER_HOST }}
           username: root
           key: ${{ secrets.PERSONAL_SERVER_SSH_KEY }}
+          # script: |
+          #   export PATH=$PATH:/usr/bin:/usr/local/bin
+          #   cd /var/www/production/BriefChat/server
+          #   git pull origin main
+          #   npm install --production
+          #   pm2 restart briefchat-proxy || pm2 start index.js --name briefchat-proxy
           script: |
-            export PATH=$PATH:/usr/bin:/usr/local/bin
+            set -e
+
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+            nvm use 22
+
             cd /var/www/production/BriefChat/server
-            git pull origin main
+
+            git fetch origin
+            git reset --hard origin/main
+            git clean -fd
+
             npm install --production
+                    
             pm2 restart briefchat-proxy || pm2 start index.js --name briefchat-proxy
