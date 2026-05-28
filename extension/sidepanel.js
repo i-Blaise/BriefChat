@@ -46,6 +46,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await initPanel();
     registerTabListeners();
+
+    chrome.storage.onChanged.addListener((changes, area) => {
+        if (area !== "local" || !("userApiKey" in changes)) return;
+        if (changes.userApiKey.newValue) {
+            updateRemainingDisplay(null);
+        }
+    });
 });
 
 // ─── Tab change detection ───────────────────────────────────────────────────

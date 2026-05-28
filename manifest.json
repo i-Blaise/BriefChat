@@ -4,24 +4,24 @@
     "version": "1.1",
     "description": "Instantly summarize any webpage and chat with it using AI.",
     "icons": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
+        "16": "extension/icons/icon16.png",
+        "48": "extension/icons/icon48.png",
+        "128": "extension/icons/icon128.png"
     },
     "action": {
         "default_icon": {
-            "16": "icons/icon16.png",
-            "48": "icons/icon48.png",
-            "128": "icons/icon128.png"
+            "16": "extension/icons/icon16.png",
+            "48": "extension/icons/icon48.png",
+            "128": "extension/icons/icon128.png"
         },
         "default_title": "BriefChat"
     },
     "side_panel": {
-        "default_path": "sidepanel.html"
+        "default_path": "extension/sidepanel.html"
     },
-    "options_page": "options.html",
+    "options_page": "extension/options.html",
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "extension/background.js"
     },
     "permissions": [
         "activeTab",
@@ -32,5 +32,5 @@
     ],
     "host_permissions": [
         "<all_urls>"
-    ],
+    ]
 }
